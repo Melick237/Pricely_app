@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Product_type</title>
+</head>
+<body>
+    <div layout:fragment="content">
+      <h1 th:text="${category.name}"></h1>
+
+      <ul>
+          <li th:each="product_type: ${category.product_type}">
+              <a th:href="@{/product_types/{id}(id=${product_type.id})}"><span th:text="${product_type.name}"></span></a>
+          </li>
+      </ul>
+        <!--<a th:href="@{/categories}">Go Back</a>-->
+        <button onclick="window.history.back()">Go Back</button>
+    </div>
+</body>
+</html>
