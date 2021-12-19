@@ -44,7 +44,7 @@
                                     <img th:src="${product.imagePath}" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <h3><span th:text="${product.name}"></span> <strong th:text="${product.price}+ ' €'"></strong></h3>
+                                    <a th:href="'/productDetail/'+${product.id}"><h3><span class="hover-color" th:text="${product.name}"></span> <strong th:text="${product.price}+ ' €'"></strong></h3></a>
                                     <p th:text="${product.description}"></p>
                                 </div>
                             </div>

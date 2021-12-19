@@ -32,20 +32,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="single-content">
-                    <img src="/img/single.jpg" />
-                    <h2>Single Produkt</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie,
-                        lorem eu eleifend bibendum, augue purus mollis sapien, non rhoncus eros leo
-                        in nunc. Donec a nulla vel turpis consectetur tempor ac vel justo. In hac
-                        habitasse platea dictumst. Cras nec sollicitudin eros. Nunc eu enim non
-                        turpis sagittis rhoncus consectetur id augue. Mauris dignissim neque felis.
-                        Phasellus mollis mi a pharetra cursus. Maecenas vulputate augue placerat
-                        lacus mattis, nec ornare risus sollicitudin.
-                    </p>
-
-                    <a class="btn custom-btn" href="/">Zum Anbieter</a>
-
+                    <img class="detail_image" th:src="${product.imagePath}" />
+                    <h2 th:text="${product.name}"></h2>
+                    <h5 class="price" th:text="${product.price}+' €'"></h5>
+                    <p th:text="${product.description}"></p>
+                    <a class="btn custom-btn" th:href="${product.linkShop}">Zum Anbieter</a>
                 </div>
             </div>
         </div>

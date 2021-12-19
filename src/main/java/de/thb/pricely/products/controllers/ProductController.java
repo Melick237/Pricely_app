@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -33,8 +34,13 @@ public class ProductController {
         return "productList";
     }
 
-    @GetMapping("/product_detail")
-    public String showSinglePage(){
+    @GetMapping("/productDetail/{id}")
+    public String showSinglePage(@PathVariable Long id, Model model) {
+        Optional<Product> product = productService.getProduct(id);
+        if (product.isEmpty())
+            return "redirect:/kategorie";
+
+        model.addAttribute("product", product.get());
         return "product_detail";
     }
 }
