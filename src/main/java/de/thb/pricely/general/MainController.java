@@ -15,23 +15,11 @@ public class MainController {
         return "about";
     }
 
-    @GetMapping("/kategorie")
-    public String showKategoriePage(){
-        return "kategorie";
-    }
+
 
     @GetMapping("/contact")
     public String showContactPage(){
         return "contact";
     }
 
-    @GetMapping("/kategorie_list")
-    public String showKategorieListPage(){
-        return "kategorie_list";
-    }
-
-    @GetMapping("/product_detail")
-    public String showSinglePage(){
-        return "product_detail";
-    }
 }

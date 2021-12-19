@@ -32,34 +32,14 @@
         <div class="food mt-0">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-4">
+                    <div class="col-md-4" th:each="category : ${categories}">
                         <div class="food-item">
-                            <img class="icon-image" src="img/icons/cafe.png" />
-                            <h2>Café</h2>
+                            <img class="icon-image" th:src="${category.image}" />
+                            <h2 th:text="${#strings.capitalize(category.name)}"></h2>
                             <p>
                                 Bei uns findest Du die Beste Preise für beliebige Produkte.
                             </p>
-                            <a href="">Produkte sehen</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="food-item">
-                            <img class="icon-image" src="img/icons/muesli.png" />
-                            <h2>Muesli</h2>
-                            <p>
-                                Bei uns findest Du die Beste Preise für beliebige Produkte.
-                            </p>
-                            <a href="">Produkte sehen</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="food-item">
-                            <img class="icon-image" src="img/icons/noodle.png" />
-                            <h2>Noodle</h2>
-                            <p>
-                                Bei uns findest Du die Beste Preise für beliebige Produkte.
-                            </p>
-                            <a href="">Produkte sehen</a>
+                            <a th:href="'productList/'+${category.name}">Produkte sehen</a>
                         </div>
                     </div>
                 </div>
