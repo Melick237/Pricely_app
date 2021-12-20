@@ -20,7 +20,7 @@
             </div>
             <div class="col-12">
                 <a href="/">Home</a>
-                <a href="/productList">Produktliste</a>
+                <a th:href="${categoryName}">Produktliste</a>
             </div>
         </div>
     </div>
@@ -44,7 +44,8 @@
                                     <img th:src="${product.imagePath}" alt="Image">
                                 </div>
                                 <div class="menu-text">
-                                    <a th:href="'/productDetail/'+${product.id}"><h3><span class="hover-color" th:text="${product.name}"></span> <strong th:text="${product.price}+ ' €'"></strong></h3></a>
+                                    <a th:href="'/productDetail/'+${product.id}"><h3><span class="hover-color" th:text="${product.name}"></span>
+                                        <strong th:text="${product.price}+ ' € bei '+ ${product.shop}"></strong></h3></a>
                                     <p th:text="${product.description}"></p>
                                 </div>
                             </div>
