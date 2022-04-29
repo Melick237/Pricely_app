@@ -1,0 +1,116 @@
+<!--
+* Page: View_list
+* Autor: Loic Melachio Tsayem
+* Datum: 18.01.2022
+* -->
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+
+    <title>Pricely App</title>
+
+    <th:block th:insert="imports/utils.html :: meta"></th:block>
+    <th:block th:insert="imports/utils.html :: maincss"></th:block>
+</head>
+<body>
+<th:block th:insert="imports/imports.html :: header"></th:block>
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Wish List</h2>
+            </div>
+            <div class="col-12">
+                <a href="/">Home</a>
+                <a href="/view_list">Wish List</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<div  layout:fragment="content" class="main-container container">
+    <div class="section-header text-center">
+        <h2>My Wish List</h2>
+    </div>
+    <div class="row">
+
+        <div id="content" class="col-sm-12">
+
+            <div th:if="${param.updateList}">
+                <div class="alert alert-info">List item has been updated successfully!</div>
+            </div>
+            <div th:if="${param.removeItem}">
+                <div class="alert alert-danger">List item has been removed successfully!</div>
+            </div>
+            <div th:if="${param.emptyList}">
+                <div class="alert alert-danger">List has been successfully cleared!</div>
+            </div>
+
+            <h2 class="title">Wish List</h2>
+            <div class="table-responsive form-group">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-center">Product</td>
+                            <td class="text-left">Name</td>
+                            <td class="text-left">Provider</td>
+                            <td class="text-left">Price</td>
+                            <td class="text-left">Delete Product</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <div th:if="${wishList != null}">
+                        <tr th:each="item : ${wishList}">
+                            <td class="text-center"><a th:href="${item.product.link}"><img width="70px" th:src="${item.product.photourl}" th:alt="${item.product.name}" th:title="${item.product.name}" class="img-thumbnail" /></a></td>
+                            <td class="text-left"><a th:href="${item.product.link}"> <text th:text="${item.product.name}"/></a>
+                            <td class="text-left"><a th:href="${item.product.provider.link}"> <img th:src="${item.product.provider.logourl}"></a><br />
+                            </td>
+                            <form th:action="@{/update-list/{id}(id=${item.id})}" method="post">
+                                <td class="text-left" th:text="${item.product.price + ' €'}"></td>
+                                <td class="text-left" width="200px"><div class="input-group btn-block quantity">
+                                    <span class="input-group-btn">
+                                <button type="submit" data-toggle="tooltip" name="action" value="delete" title="Remove" class="btn btn-danger" onClick="">Remove<i class="fa fa-times-circle"></i></button>
+                                </span></div></td>
+                            </form>
+                        </tr>
+                    </div>
+                    <div th:if="${wishList == null}">
+                        <tr><td colspan="6" class="text-center">Wish List is empty !</td></tr>
+                    </div>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="buttons">
+                <div class="pull-right">
+                    <a th:href="@{/empty-list}" class="btn btn-warning">Clear the list</a>
+                    <a href="/categories" style="margin-left: 70%;">See more products</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<th:block layout:fragment="script">
+</th:block>
+
+<th:block th:insert="imports/imports.html :: footer"></th:block>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<th:block th:insert="imports/utils.html :: mainjs"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--
+* Page: Product_types
+* Autor: Loic Melachio Tsayem
+* Datum: 18.01.2022
+* -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Product_type</title>
+
+    <th:block th:insert="imports/utils.html :: meta"></th:block>
+    <th:block th:insert="imports/utils.html :: maincss"></th:block>
+</head>
+<body>
+    <th:block th:insert="imports/imports.html :: header"></th:block>
+    <!-- Page Header Start -->
+    <div class="page-header mb-0">
+       <div class="container">
+          <div class="row">
+             <div class="col-12">
+                 <h2 th:text="${product_path}"></h2>
+             </div>
+             <div class="col-12">
+                 <a href="/">Home</a>
+                 <a href="/categories">Categories</a>
+             </div>
+          </div>
+       </div>
+    </div>
+    <!-- Page Header End -->
+    <div layout:fragment="content">
+     <div class="product-column">
+         <div class="product-list-product row" style="margin-left: 180px;">
+             <div style="margin: 15px" class="product-item col-lg-3 col-mg-4 col-sm-12" th:each="product_type: ${product_types}">
+                 <a th:href="@{/product_types/{id}(id=${product_type.id})}">
+                    <img class="product-photo-type" th:src="${product_type.photourl}">
+                     <br />
+                    <td class="product-name-type" th:text="${product_type.name}"></td>
+                     <br />
+                     <td class="product-cheapest-type" th:text="${'ab ' + product_type.cheapest + ' €'}"></td>
+                 </a>
+             </div>
+         </div>
+      </div>
+    </div>
+
+    <th:block th:insert="imports/imports.html :: footer"></th:block>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <th:block th:insert="imports/utils.html :: mainjs"></th:block>
+</body>
+</html>

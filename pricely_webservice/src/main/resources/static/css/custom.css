@@ -1,0 +1,105 @@
+.icon-image{
+    width: 90px;
+}
+
+.hover-color{
+    transition: .5s;
+}
+.hover-color:hover{
+    color: #fd7e14 !important;
+}
+
+.price{
+    display: inline-block;
+    padding-left: 5px;
+    color: #fbaf32;
+    background: #ffffff;
+}
+
+.detail_image{
+    width: 200px !important;
+}
+
+
+/*********************** * Essential Structure * ***********************/
+.flexsearch--wrapper {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    background: transparent;
+    margin: 0;
+    position: static;
+}
+.flexsearch--form {
+    overflow: hidden;
+    position: relative;
+}
+.flexsearch--input-wrapper {
+
+    /* Right padding for submit button width */
+    overflow: hidden;
+}
+.flexsearch--input {
+    width: 100%;
+    color: #757575;
+    background: #ffffff;
+    font-family: 'open sans', sans-serif;
+}
+/*********************** * Configurable Styles * ***********************/
+
+.flexsearch--input {
+
+    background: transparent;
+    border-color: #f8f9fa;
+    border-radius: 35px;
+    /* (height/2) + border-width */
+    border-style: solid;
+
+    margin-top: 9px;
+    font-family: 'Helvetica', sans-serif;
+    -moz-appearance: none;
+}
+.flexsearch--submit {
+    position: absolute;
+    right: 25px;
+    top: 8px;
+    display: block;
+
+    padding: 0;
+    border: none;
+    /* margin-top + border-width */
+    /* border-width */
+    background: transparent;
+    color: #f8f9fa;
+    font-size: 20px;
+}
+.flexsearch--input:focus {
+    outline: none;
+    border-color: #333;
+}
+.flexsearch--input:focus.flexsearch--submit {
+    color: #333;
+}
+.flexsearch--submit:hover {
+    color: #333;
+    cursor: pointer;
+}
+::-webkit-input-placeholder {
+    color: #333333;
+}
+input:-moz-placeholder {
+    color: #f8f9fa;
+}
+/**************** * Pretify demo * ****************/
+.h1 {
+    float: left;
+    margin: 25px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 45px;
+    text-align: center;
+}
+

@@ -1,0 +1,333 @@
+<!--
+* Page: Home page
+* Autor: Loic Melachio Tsayem
+* Datum: 18.01.2022
+* -->
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Pricely App</title>
+
+    <th:block th:insert="imports/utils.html :: meta"></th:block>
+    <th:block th:insert="imports/utils.html :: maincss"></th:block>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<th:block th:insert="imports/imports.html :: header"></th:block>
+
+
+<!-- Carousel Start -->
+<div class="carousel">
+    <div class="container-fluid">
+        <div class="owl-carousel">
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="/img/slide_1.jpg" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Best <span>Quality</span> Products</h1>
+                    <p>
+                        Buy products simply cheaper.
+                        <br>
+                        You can find the prices and availabilities of all major sellers here.
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="/categories">Select a category</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="/img/slide_2.jpg" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>World’s <span>Best</span> Price</h1>
+                    <p>
+                        <br>
+                        Compare countless product offers and enjoy savings with just one search!
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="/categories">Select a category</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-img">
+                    <img src="/img/slide_3.jpg" alt="Image">
+                </div>
+                <div class="carousel-text">
+                    <h1>Fastest Order <span>Delivery</span></h1>
+                    <p><br>
+                        Compare the cheapest product providers with just one search.
+                    </p>
+                    <div class="carousel-btn">
+                        <a class="btn custom-btn" href="/categories">Select a category</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+<!-- Feature Start -->
+<div class="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-header">
+                    <p>Why Choose Us</p>
+                    <h2>Our Key Features</h2>
+                </div>
+                <div class="feature-text">
+                    <div class="feature-img">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="/img/feature-1.jpg" alt="Image">
+                            </div>
+                            <div class="col-6">
+                                <img src="/img/feature-2.jpg" alt="Image">
+                            </div>
+                            <div class="col-6">
+                                <img src="/img/feature-3.jpg" alt="Image">
+                            </div>
+                            <div class="col-6">
+                                <img src="/img/feature-4.jpg" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        The web site Pricely provides a convenient environment where customers can speed through the checkout process and check out products.
+                        Users can navigate the site and easily find the products they are looking for. Precise filters allow users to refine their search and add it to wishlist.
+                    </p>
+                    <a class="btn custom-btn" href="/categories">Select a category</a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-cooking"></i>
+                            <h3>World’s best providers</h3>
+                            <p>
+                                We keep things fair and simple, by offering customers the best deal possible, from a wide range of shops.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-cocktail"></i>
+                            <h3>Transparency</h3>
+                            <p>
+                                We help our users to better navigate the often opaque online trade.
+                                The use of idealo is completely free of charge for all consumers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-medal"></i>
+                            <h3>Best quality products</h3>
+                            <p>
+                                Besides offering great deals and discounts, Pricely is known to offer the best quality products at affordable prices.
+                                It houses a diverse and efficient community of small businesses who are selling their products at discounted rates.
+                                A great thing about Pricely is that you can shop for fresh and good quality products from the comfort of your home.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-vegetable"></i>
+                            <h3>Best product prices</h3>
+                            <p>
+                                Finding the best price available, meeting customers' needs, comparing and sorting prices, everything is possible at Pricely
+                                But its users turn to the Web site to compare far more than just prices. Pricely users can also compare information like product ratings, and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-courier"></i>
+                            <h3>Fastest door delivery</h3>
+                            <p>
+                                Ship parcels from the comfort of your home.
+                                Place your order online, and your items will be picked up and transported to the address of your choice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="feature-item">
+                            <i class="flaticon-fruits-and-vegetables"></i>
+                            <h3>varied product category</h3>
+                            <p>
+                                The products are classified according to different categories to create a clear, coherent catalogue,
+                                and therefore a quality customer experience (the visitor can easily find the type of product he is looking for).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Team Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Our Team</p>
+            <h2>Our Developper</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/img/team-3.jpg" alt="Image">
+                        <div class="team-social">
+                            <a href="https://github.com/jokao1030"><i class="fab fa-github"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Chin-Wen Kao</h2>
+                        <p>Entwickler 1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/img/team-1.jpg" alt="Image">
+                        <div class="team-social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href="https://melick237.github.io/myCV/"><i class="fab fa-github"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Loic Melachio</h2>
+                        <p>Entwickler 2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/img/team-2.jpg" alt="Image">
+                        <div class="team-social">
+                            <a href="https://github.com/ssyafiqahrahman"><i class="fab fa-github"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Syafiqah Rahman </h2>
+                        <p>Entwickler 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Testimonial Start -->
+<div class="testimonial">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Customer rating</h2>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+            <div class="testimonial-item">
+                <div class="testimonial-img">
+                    <img src="/img/testimonial-1.jpg" alt="Image">
+                </div>
+                <p>
+                    Nice free shop. There are many options. They delivered what thee promised.
+                    I can only recommend this shop.
+                </p>
+                <h2>Julia Doll</h2>
+                <h3>Rating
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star"></span>
+                </h3>
+
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-img">
+                    <img src="/img/testimonial-2.jpg" alt="Image">
+                </div>
+                <p>
+                    I ordered on Monday and everything was there on Wednesday!
+                    Super service and the prices are also very low
+                </p>
+                <h2>Fabian Malaya</h2>
+                <h3>Rating
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star"></span>
+                </h3>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-img">
+                    <img src="/img/testimonial-3.jpg" alt="Image">
+                </div>
+                <p>
+                    My Order was delivered super fast and the transport company delivered everything to my door.
+                    Happy to do it again!!!!
+                </p>
+                <h2>Kim Brechti</h2>
+                <h3>Rating
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                </h3>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-img">
+                    <img src="/img/testimonial-4.jpg" alt="Image">
+                </div>
+                <p>
+                    Got great quality for reasonable price. Nothing negative. Item was shipped quickly.
+                    Friendly advice, the advisors on the phone are friendly
+                </p>
+                <h2>Michael Piep</h2>
+                <h3>Rating
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star checked" style="color: orange;"></span>
+                    <span class="fa fa-star"></span>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+<th:block th:insert="imports/imports.html :: footer"></th:block>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<th:block th:insert="imports/utils.html :: mainjs"></th:block>
+
+</body>
+</html>

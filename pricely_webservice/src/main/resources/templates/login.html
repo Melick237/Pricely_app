@@ -1,0 +1,85 @@
+<!--
+* Page: Login
+* Autor: Loic Melachio Tsayem
+* Datum: 18.01.2022
+* -->
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Pricely App</title>
+
+    <th:block th:insert="imports/utils.html :: meta"></th:block>
+    <th:block th:insert="imports/utils.html :: maincss"></th:block>
+</head>
+
+<body>
+
+<th:block th:insert="imports/imports.html :: header"></th:block>
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Login</h2>
+            </div>
+            <div class="col-12">
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Login Start -->
+<div class="booking">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5" style="margin: auto; width: 50%; padding: 10px;">
+                <div class="booking-form">
+                    <form th:action="@{/login}" method="post" class="card-text needs-validation" novalidate>
+                        <div th:if="${success}" class="alert alert-success" role="alert"></div>
+                        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                            Benutzername/E-Mail oder Passwort ist falsch.
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Email" required tabindex="1" autofocus />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required tabindex="2" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn custom-btn" type="submit">Login</button>
+                        </div>
+                        <div>
+                            <p>"New to Pricely? " <a href="/registration" style="color: green;">Create an account</a>.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login End -->
+
+<th:block th:insert="imports/imports.html :: footer"></th:block>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<th:block th:insert="imports/utils.html :: mainjs"></th:block>
+</body>
+</html>

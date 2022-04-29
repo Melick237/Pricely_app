@@ -1,0 +1,131 @@
+<!--
+* Page: Registration
+* Autor: Loic Melachio Tsayem
+* Datum: 18.01.2022
+* -->
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Pricely App</title>
+
+    <th:block th:insert="imports/utils.html :: meta"></th:block>
+    <th:block th:insert="imports/utils.html :: maincss"></th:block>
+</head>
+
+<body>
+
+<th:block th:insert="imports/imports.html :: header"></th:block>
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Registration</h2>
+            </div>
+            <div class="col-12">
+                <a href="/">Home</a>
+                <a href="/registration">Registration</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Registration Start -->
+<div class="booking">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5" style="margin: auto; width: 50%; padding: 10px;">
+                <div class="booking-form">
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">There was some error in registration.</div>
+                    </div>
+                    <form th:action="@{/registration}" th:object="${user}" method="post">
+                        <div th:if="${param.success}">
+                            <div class="alert alert-info">You've successfully registered to our awesome app!</div>
+                        </div>
+                        <div th:if="${param.email}">
+                            <div class="alert alert-danger">
+                                There is already a user registered with the username / email provided.
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+                            <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                    <input type="email" th:field="*{email}" placeholder="Email" id="username" class="form-control">
+                                    <p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}" />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                            <!--<div class="input-group">
+                                <input type="text" class="form-control" placeholder="Firstname" required="required" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Lastname" required="required" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--<div class="control-group">
+                                <input type="email" th:field="*{email}" class="form-control" placeholder="Email" required="required" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="far fa-envelope"></i></div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="control-group">
+                            <div class="input-group">
+                                    <input type="password" th:field="*{password}" minlength="5" required placeholder="Password" id="password" class="form-control">
+                                    <p th:if="${#fields.hasErrors('password')}" th:errorclass="error" th:errors="*{password}" />
+                                <!--<input type="password" th:field="*{password}" class="form-control" placeholder="Password" required minlength="6" maxlength="10"/>-->
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="control-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Passwordconfirm" required="required" />
+                                <div class="input-group-append">
+                                    <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                                </div>
+                            </div>
+                        </div>-->
+                        <br><br>
+                        <!--<div class="btn custom-btn">
+                            <input type="submit" value="Register" class="btn btn-primary btn btn-default pull-right" />
+                        </div>-->
+                        <div>
+                            <button class="btn custom-btn" type="submit">Register</button>
+                        </div>
+                        <div>
+                            <p>"You already have an account? " <a href="/login" style="color: green;">Sign in to your account</a>.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Registration End -->
+
+<th:block th:insert="imports/imports.html :: footer"></th:block>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<th:block th:insert="imports/utils.html :: mainjs"></th:block>
+</body>
+</html>
